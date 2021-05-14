@@ -6,16 +6,20 @@ import argparse
 # from .funcmodule import my_function
 def main():
     parser = argparse.ArgumentParser(description='Command to do')
-    parser.add_argument('command', type=str,
-                    help='available commands')
-    parser.add_argument('param1', type=str,
-                    help='first param')
+    parser.add_argument('command', type=str, help='available commands')
+    parser.add_argument('param1', type=str, help='first param')
+    parser.add_argument('m', type=str, help='first param')
     args = parser.parse_args()
     cmd = args.command
     if cmd == 'push':
-        param1 = args.param1
-        query = "git add . && git commit -m " + param1 + " && git push"
-        os.system(query)
+        try:
+            m = args.m
+            param1 = args.param1
+            query = "git status && git add . && git commit -m " + param1 + " && git push"
+            os.system(query)
+        except:
+            print('something else')
+        
     else:
         print('failure')
     # my_function('hello world')
