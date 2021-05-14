@@ -1,1 +1,3 @@
-##### currently only has command 'tord push an example commit message' to push code fast on hobby projects
+#### currently supported commands:
+* tord push an example commit message
+* * lorem ipusm
