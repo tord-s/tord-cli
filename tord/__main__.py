@@ -7,15 +7,15 @@ import argparse
 def main():
     parser = argparse.ArgumentParser(description='Command to do')
     parser.add_argument('command', type=str, help='available commands')
-    parser.add_argument('m', type=str, help='first param')
-    parser.add_argument('param1', type=str, help='first param')
+    parser.add_argument('p1', type=str, help='first param')
+    parser.add_argument('p2', type=str, help='first param')
     args = parser.parse_args()
     cmd = args.command
     if cmd == 'push':
         try:
-            m = args.m
-            param1 = args.param1
-            query = "git status && git add . && git commit -m " + param1 + " && git push"
+            p1 = args.p1
+            p2 = args.p2
+            query = "git status && git add . && git commit -m " + p2 + " && git push"
             os.system(query)
         except:
             print('something else')
