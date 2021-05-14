@@ -10,10 +10,10 @@ def main():
         try:
             commit_m = "'"
             for word in message:
-                commit_m += word + " "
+                commit_m += word + "_"
             commit_m = commit_m.strip()
             commit_m += "'"
-            query = "git status && git add . && git commit -m " + commit_m
+            query = "git status && git add . && git commit -m " + commit_m + " && git push"
             print(query)
             os.system(query)
         except:
