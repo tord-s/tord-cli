@@ -1,3 +1,0 @@
-[console_scripts]
-tord = tord.__main__:main
-
