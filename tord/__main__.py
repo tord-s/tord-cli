@@ -7,8 +7,8 @@ import argparse
 def main():
     parser = argparse.ArgumentParser(description='Command to do')
     parser.add_argument('command', type=str, help='available commands')
-    parser.add_argument('param1', type=str, help='first param')
     parser.add_argument('m', type=str, help='first param')
+    parser.add_argument('param1', type=str, help='first param')
     args = parser.parse_args()
     cmd = args.command
     if cmd == 'push':
