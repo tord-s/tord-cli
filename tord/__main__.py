@@ -13,7 +13,6 @@ def main():
                 for word in message:
                     commit_m += word + "_"
                 commit_m = commit_m[:-1]
-                commit_m += ""
                 if len(message) < 1:
                     commit_m = 'no_commit_message'
                 query = "git status && git add . && git commit -m " + commit_m + " && git push"
