@@ -13,11 +13,12 @@ def main():
     cmd = args.command
     if cmd == 'push':
         try:
-            raw = args.message
-            message = "'" + raw[0] +  "'"
-            message = " -m ngfngf -m kmfkdmfm"
-            query = "git status && git add . && git commit -m $" + message + " && git push"
-            print(query)
+            raw = args.message[0].split(' ')
+            message = ""
+            for i in raw:
+                message += '_' + i.strip()
+            print(message)
+            query = "git status && git add . && git commit -m " + message + " && git push"
             os.system(query)
         except:
             print('something else')
