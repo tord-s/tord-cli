@@ -7,6 +7,8 @@ def main():
     try:
         cmd = sys.argv[1]
         message = sys.argv[2:]
+        if len(message) < 1:
+            print('YEEEEEEEEEEEEEEEt')
         if cmd == 'push':
             try:
                 commit_m = "'"
