@@ -7,19 +7,22 @@ import argparse
 def main():
     parser = argparse.ArgumentParser(description='Command to do')
     parser.add_argument('command', type=str, help='available commands')
-    parser.add_argument('p1', type=str, help='first param')
-    parser.add_argument('p2', type=str, help='first param')
+    parser.add_argument("-m", "--message", required=False,
+	help="name of the user", nargs='+')
     args = parser.parse_args()
     cmd = args.command
     if cmd == 'push':
         try:
-            p1 = args.p1
-            p2 = args.p2
-            query = "git status && git add . && git commit -m " + p2 + " && git push"
+            raw = args.message
+            message = str(raw[0])
+            print(message)
+            query = "git status && git add . && git commit -m " + message[0] + " && git push"
             os.system(query)
         except:
             print('something else')
         
+
+
     else:
         print('failure')
     # my_function('hello world')
