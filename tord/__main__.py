@@ -16,7 +16,7 @@ def main():
             raw = args.message
             message = str(raw[0])
             print(message)
-            query = "git status && git add . && git commit -m " + message[0] + " && git push"
+            query = "git status && git add . && git commit -m " + "`" + message + "`" " && git push"
             os.system(query)
         except:
             print('something else')
