@@ -7,8 +7,6 @@ def main():
     try:
         cmd = sys.argv[1]
         message = sys.argv[2:]
-        if len(message) < 1:
-            print('YEEEEEEEEEEEEEEEt')
         if cmd == 'push':
             try:
                 commit_m = "'"
@@ -16,6 +14,8 @@ def main():
                     commit_m += word + "_"
                 commit_m = commit_m[:-1]
                 commit_m += "'"
+                if len(message) < 1:
+                    commit_m = 'no_commit_message'
                 query = "git status && git add . && git commit -m " + commit_m + " && git push"
                 os.system(query)
             except:
