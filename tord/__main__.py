@@ -16,7 +16,7 @@ def main():
             raw = args.message
             message = "'" + raw[0] +  "'"
             message = " -m ngfngf -m kmfkdmfm"
-            query = "git status && git add . && git commit " + message + " && git push"
+            query = "git status && git add . && git commit -m $" + message + " && git push"
             print(query)
             os.system(query)
         except:
