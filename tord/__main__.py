@@ -19,7 +19,7 @@ def main():
             except:
                 print('Failed to push to git')
         else:
-            print('Invalid command')
+            print('Invalid push command')
     except:
         print("vaild commands: 'push'")
 if __name__ == '__main__':
