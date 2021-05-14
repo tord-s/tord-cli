@@ -14,15 +14,10 @@ def main():
             commit_m = commit_m[:-1]
             commit_m += "'"
             query = "git status && git add . && git commit -m " + commit_m + " && git push"
-            print(query)
             os.system(query)
         except:
-            print('something else')
+            print('Failed to push to git')
     else:
-        print('failure')
-    # my_function('hello world')
-    # my_object = MyClass('Thomas')
-    # my_object.say_name()
-    # os.system("git add . && git commit -m")
+        print('Invalid command')
 if __name__ == '__main__':
     main()
