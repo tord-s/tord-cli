@@ -15,6 +15,7 @@ def main():
     if cmd == 'push':
         param1 = args.param1
         query = "git add . && git commit -m " + param1
+        os.system(query)
     else:
         print('failure')
     # my_function('hello world')
